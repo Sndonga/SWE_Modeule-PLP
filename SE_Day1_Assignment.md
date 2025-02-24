@@ -60,7 +60,7 @@ Describe the roles and responsibilities of a Software Developer, a Quality Assur
  \- deliver the complete software to the client and regularly check its performance.
 
 Discuss the importance of Integrated Development Environments (IDEs) and Version Control Systems (VCS) in the software development process. Give examples of each.  
-An **integrated development environment** (IDE) is a software platform that facilitates the creation of other software applications by providing a space to write, compile, and debug code, sometimes with value-adding tools that reduce development efforts. eg Visual Studio Code (VSCode)  
+**integrated development environment** (IDE) is a software platform that facilitates the creation of other software apps by providing a space to write, compile, and debug code, sometimes with value-adding tools that reduce development efforts. eg Visual Studio Code (VSCode)  
 importance:
 
 * Programming languages have rules for how statements must be structured. Because an IDE knows these rules, it contains many intelligent features for automatically writing or editing the source code.  
@@ -112,17 +112,19 @@ Explain the different types of testing (unit, integration, system, and acceptanc
 ## \#Part 2: Introduction to AI and Prompt Engineering
 
 1. Define prompt engineering and discuss its importance in interacting with AI models.  
-    **prompt engineering**  is the process where you guide generative AI solutions to generate desired outputs.  
+    **prompt engineering**  is the process of guiding generative AI solutions to generate desired outputs/responses.  
    Importance:  
    **Improved user experience** \- Prompt engineering makes it easy for users to obtain relevant results in the first prompt. It helps mitigate bias that may be present from existing human bias in the large language models’ training data.  
    **Increased flexibility** \- A prompt engineer can create prompts with domain-neutral instructions highlighting logical links and broad patterns.  
-   **developer contro**l \- Prompt engineering gives developers more control over users' interactions with the AI. Effective prompts provide intent and establish context to the large language models. Provide an example of a vague prompt and then improve it by making it clear, specific, and concise.  
+   **developer control** \- Prompt engineering gives developers more control over users' interactions with the AI. Effective prompts provide intent and establish context to the large language models. Provide an example of a vague prompt and then improve it by making it clear, specific, and concise.  
      
 2. Provide an example of a vague prompt and then improve it by making it clear, specific, and concise. Explain why the improved prompt is more effective.
-
-Draw a picture of a person  
-Draw a full-body portrait of a young woman with long brown hair, wearing a red jacket and blue jeans, standing in a park on a sunny day with trees and grass in the background.  
-**Clarity**: The improved prompt specifies what is being asked (a full-body portrait) rather than just a "person.  
-**Specific Details**: Describing the woman's appearance (long brown hair, red jacket, blue jeans) and the setting (park, sunny day, trees, grass) gives clear guidance on the image to be created.  
-**Concise:** The additional details provide a clear picture without being overly complicated, making it easier for the artist to understand exactly what is needed.
+**Vague prompt**
+Write an essay on human beings
+**Improved prompt**
+Write me a short essay, 500 words maxium explaining human beings as the complex emotional creatures they are. Expalin as per your current of human emotions and how human being relate to them, discuss anger; joy, love, envy, jelousy and how they impact human interactions.
+**HOW THE IMPROVED PROMPT IS MORE EFFECTIVE**
+1. The improved prompt specifies what is being asked (The context of the essay in detail) offering clarity.
+2. Describing the maximum number of words and the setting (emotional complexities of human beings) giving clear guidance on the essay to be created.  
+3. The additional details provide a clear picture without being overly complicated, making it easier for the writer to understand exactly what is needed.
 
