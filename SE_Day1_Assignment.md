@@ -26,7 +26,7 @@ Mastering process \- 	Agile Manifesto and Agile Development	Enabling iterative, 
 Mastering machine \- 	Cloud Computing	Provided scalable, on-demand infrastructure for modern applications.
 
 List and briefly explain the phases of the Software Development Life Cycle.  
- **planning** \- identify the software requirement or purpose and scope.  
+ **planning and Feasibility** \- identify the software requirement or purpose and scope.  
  **requirement** **analysis** \- identify the final user specification.   
 **design** \- building the framework.   
 **coding** \- converting software design into tangible code.  
