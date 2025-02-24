@@ -11,6 +11,7 @@
 4. Through implementation of protection practices like authentication, authorization and encryption users information is secure.
  
 **Identify and describe at least three key milestones in the evolution of software engineering.**
+
 **1. The Software Crisis and the Birth of Software Engineering ** \- The rapid growth of computer hardware outpaced the ability of developers to create reliable and efficient software. The projects ran over budget, with late deliveries, and software that often failed to meet user needs. The crisis led to the development of structured programming, modular design, and the establishment of best practices for software development.
 **2. The Rise of Object-Oriented Programming (OOP)** \-  Languages like C++ introduced concepts such as classes, objects, inheritance, and polymorphism. Alloweing developers to model real-world entities more effectively, leading to improved code reusability, modularity, and maintainability. Enabling the development of complex, scalable systems and frameworks.
   **3. The Agile Manifesto and the Shift to Agile Development** \- The Agile Manifesto was published emphasizing values such as:
