@@ -1,0 +1,35 @@
+def process_file(input_filename, output_filename):
+ 
+    try:
+        # Read the input file
+        with open(input_filename, 'r') as input_file:
+            content = input_file.read()
+
+        # Process content
+        word_count = len(content.split())
+        uppercase_content = content.upper()
+
+        # Write to output file
+        with open(output_filename, 'w') as output_file:
+            output_file.write(f"WORD COUNT: {word_count}\n\n")
+            output_file.write(uppercase_content)
+
+        print(f"Success! Processed content saved to '{output_filename}'.")
+
+    except FileNotFoundError:
+        print(f"Error: File '{input_filename}' not found. Please check the filename.")
+    except PermissionError:
+        print(f"Error: Permission denied when accessing '{input_filename}'.")
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
+
+def main():
+    """Main function to interact with the user."""
+    print("=== File Processor with Error Handling ===")
+    input_filename = input("Enter the input filename : ").strip()
+    output_filename = input("Enter the output filename : ").strip()
+
+    process_file(input_filename, output_filename)
+
+if __name__ == "__main__":
+    main()
