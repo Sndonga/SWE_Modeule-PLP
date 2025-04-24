@@ -1,0 +1,178 @@
+**CLASS INSTANCE WITH INHERITANCE**
+class Superhero:
+    """Base class for all superheroes"""
+    
+    def __init__(self, name, secret_identity, powers, base_of_operations):
+        self.name = name
+        self.secret_identity = secret_identity
+        self.powers = powers  # List of powers
+        self.base_of_operations = base_of_operations
+        self.health = 100
+        self.energy = 100
+        
+    def use_power(self, power_index):
+        """Use one of the superhero's powers"""
+        if self.energy >= 10:
+            self.energy -= 10
+            power = self.powers[power_index]
+            print(f"{self.name} uses {power}!")
+            return power
+        else:
+            print(f"{self.name} is too tired to use powers!")
+            return None
+            
+    def rest(self):
+        """Recover energy"""
+        self.energy = min(100, self.energy + 30)
+        print(f"{self.name} rests and recovers energy. Current energy: {self.energy}")
+        
+    def take_damage(self, amount):
+        """Take damage in battle"""
+        self.health -= amount
+        if self.health <= 0:
+            print(f"{self.name} has been defeated!")
+        else:
+            print(f"{self.name} takes {amount} damage! Health: {self.health}")
+    
+    def display_status(self):
+        """Show current status"""
+        print(f"\n--- {self.name} Status ---")
+        print(f"Secret Identity: {self.secret_identity}")
+        print(f"Health: {self.health}")
+        print(f"Energy: {self.energy}")
+        print(f"Powers: {', '.join(self.powers)}")
+        print(f"Base: {self.base_of_operations}")
+
+
+class FlyingSuperhero(Superhero):
+    """A superhero that can fly"""
+    
+    def __init__(self, name, secret_identity, powers, base_of_operations, max_altitude):
+        super().__init__(name, secret_identity, powers, base_of_operations)
+        self.max_altitude = max_altitude  # in meters
+        self.current_altitude = 0
+        
+    def fly(self, altitude):
+        """Fly to a specific altitude"""
+        if altitude <= self.max_altitude:
+            self.current_altitude = altitude
+            print(f"{self.name} flies to {altitude} meters!")
+        else:
+            print(f"{self.name} can't fly that high! Max altitude is {self.max_altitude}m")
+            
+    def land(self):
+        """Land from flight"""
+        self.current_altitude = 0
+        print(f"{self.name} lands safely!")
+        
+    def display_status(self):  # Override parent method
+        super().display_status()
+        print(f"Current Altitude: {self.current_altitude}m")
+
+
+# Create some superheroes
+if __name__ == "__main__":
+    print("=== Superhero Showcase ===")
+    
+    # Regular superhero
+    spiderman = Superhero(
+        name="Spider-Man",
+        secret_identity="Peter Parker",
+        powers=["Web slinging", "Spider sense", "Wall crawling"],
+        base_of_operations="Queens, NY"
+    )
+    
+    # Flying superhero
+    superman = FlyingSuperhero(
+        name="Superman",
+        secret_identity="Clark Kent",
+        powers=["Super strength", "Heat vision", "Freeze breath"],
+        base_of_operations="Fortress of Solitude",
+        max_altitude=20000
+    )
+    
+    # Demonstrate functionality
+    spiderman.display_status()
+    spiderman.use_power(0)  # Web slinging
+    
+    superman.display_status()
+    superman.fly(1000)
+    superman.use_power(1)  # Heat vision
+    superman.display_status()
+
+**INSTANCE OF POLYMORPHISM**
+
+class Vehicle:
+    """Base class for all vehicles"""
+    
+    def __init__(self, name, speed):
+        self.name = name
+        self.speed = speed  # in km/h
+        
+    def move(self):
+        """Generic move method to be overridden by subclasses"""
+        raise NotImplementedError("Subclasses must implement move()")
+        
+    def describe(self):
+        """Describe the vehicle"""
+        print(f"This is a {self.name} that can reach {self.speed} km/h")
+
+
+class Car(Vehicle):
+    """A car vehicle"""
+    
+    def move(self):
+        print(f"{self.name} is driving on the road 🚗")
+        
+    def honk(self):
+        print("Honk honk! 🚙")
+
+
+class Plane(Vehicle):
+    """An airplane vehicle"""
+    
+    def move(self):
+        print(f"{self.name} is flying through the air ✈️")
+        
+    def take_off(self):
+        print("🛫 Preparing for takeoff!")
+
+
+class Boat(Vehicle):
+    """A boat vehicle"""
+    
+    def move(self):
+        print(f"{self.name} is sailing on the water ⛵")
+        
+    def anchor(self):
+        print("Dropping anchor! ⚓")
+
+
+# Demonstrate polymorphism
+def travel(vehicle):
+    """Demonstrate polymorphic behavior"""
+    print("\n--- Travel Time ---")
+    vehicle.describe()
+    vehicle.move()
+    if isinstance(vehicle, Plane):
+        vehicle.take_off()
+    elif isinstance(vehicle, Car):
+        vehicle.honk()
+    elif isinstance(vehicle, Boat):
+        vehicle.anchor()
+
+
+if __name__ == "__main__":
+    print("\n=== Polymorphism Challenge ===")
+    
+    # Create different vehicles
+    tesla = Car("Tesla Model S", 250)
+    boeing = Plane("Boeing 747", 920)
+    yacht = Boat("Luxury Yacht", 50)
+    
+    # Put them in a list to demonstrate polymorphism
+    vehicles = [tesla, boeing, yacht]
+    
+    # Call move() on each - same method, different behavior
+    for vehicle in vehicles:
+        travel(vehicle)
